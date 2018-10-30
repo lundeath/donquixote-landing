@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Дон Кіхот</title>
+    <link rel="stylesheet" type="text/css" href="/css/animate.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoKlp7NKU9FYgvQC0fGcvQ16h4Anc3nQI&callback=initMap">
+    </script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>new WOW().init();</script>
+</head>
+<style>
+    body, html {
+        height: 100%;
+        background: url("/img/background.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    .jumbotron {
+        color: white;
+        text-shadow: #444 1px 2px 5px;
+        background-color: transparent;
+    }
+
+    h3 {
+        color: white;
+        text-shadow: #444 1px 2px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+<div class="container h-100">
+    <div class="row align-items-center h-100">
+        <div id='colDiv' class="col-10 mx-auto">
+            <div id="animDiv" class="jumbotron jumbotron-fluid text-center">
+                <h1 id="first" class="wow fadeInDown" data-wow-duration='3s' data-wow-delay="0.5s">Ти у Львові і не
+                    знаєш де поїсти?</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Ми на карті</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id='map' class="modal-body" style="width: 100%; height: 400px">
+            </div>
+            <div itemscope itemtype="http://schema.org/LocalBusiness">
+                <h4 class="ml-2" itemprop="name">Кафе "Дон Кіхот"</h4>
+                <span class="ml-2" itemprop="telephone">
+      <a id="phone" type="button" class="btn btn-outline-success mb-2" href="tel:+380962178419">
+         Зателефонувати нам
+      </a>
+    </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+<script>
+    function initMap() {
+        var cafe = {lat: 49.834193, lng: 24.017419};
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 16.5, center: cafe});
+        var marker = new google.maps.Marker({position: cafe, map: map});
+    }
+
+
+</script>
+
+
+
+
